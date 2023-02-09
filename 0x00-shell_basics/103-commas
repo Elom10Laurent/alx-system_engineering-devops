@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -A --format=commas | tr '/' '\n' | sort -t, -k1,1 | tr '\n' ',' | sed 's/,/\n/g' | awk 'BEGIN{ printf(".,.."); FS="," } { printf("\n%s", $0) } END{ printf("\n") }'
